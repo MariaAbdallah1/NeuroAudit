@@ -1,0 +1,79 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark purple cybersecurity theme design system */
+
+@layer base {
+  :root {
+    --background: 220 15% 8%;
+    --foreground: 280 5% 95%;
+
+    --card: 260 20% 10%;
+    --card-foreground: 280 5% 95%;
+
+    --popover: 260 20% 10%;
+    --popover-foreground: 280 5% 95%;
+
+    --primary: 271 81% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 15% 15%;
+    --secondary-foreground: 280 5% 85%;
+
+    --muted: 260 15% 12%;
+    --muted-foreground: 280 5% 65%;
+
+    --accent: 271 91% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 15% 20%;
+    --input: 260 15% 15%;
+    --ring: 271 81% 56%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0d2e 50%, #0a0a0a 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg shadow-xl;
+  }
+  
+  .neuro-card {
+    @apply bg-gradient-to-br from-gray-900/80 to-purple-900/20 
+           shadow-[20px_20px_60px_#0a0a0a,-20px_-20px_60px_#1a1a1a] 
+           border border-white/5 rounded-xl;
+  }
+  
+  .cyber-gradient {
+    background: linear-gradient(135deg, #4B0082 0%, #6A0DAD 50%, #8A2BE2 100%);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+  }
+  
+  .cyber-button {
+    @apply bg-gradient-to-r from-purple-600 to-indigo-600 
+           hover:from-purple-700 hover:to-indigo-700 
+           shadow-lg hover:shadow-purple-500/25 
+           transition-all duration-300 transform hover:scale-105;
+  }
+}
